@@ -19,6 +19,7 @@ if ! command -v git &> /dev/null; then
     brew install git
     if [ $? -eq 0 ]; then
         echo "Git installed successfully."
+        source ./configure_git.sh
     else
         echo "Failed to install Git."
     fi
