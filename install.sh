@@ -83,5 +83,20 @@ else
     echo "Postman already installed."
 fi
 
+# Install Slack
+echo "############## Slack ##############"
+if ! command -v slack &> /dev/null; then
+    echo "Slack not found. Installing Slack..."
+    brew install --cask slack
+    if [ $? -eq 0 ]; then
+        echo "Slack installed successfully."
+    else
+        echo "Failed to install Slack."
+        exit 1
+    fi
+else
+    echo "Slack already installed."
+fi
+
 echo "############## DONE ##############"
 echo "All installations are complete!"
